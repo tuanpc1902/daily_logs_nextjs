@@ -29,29 +29,34 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
-    name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
+    name: "Trang chủ",
+    path: "/",
   },
   {
     icon: <CalenderIcon />,
-    name: "Calendar",
+    name: "Lịch",
     path: "/calendar",
   },
   {
     icon: <UserCircleIcon />,
-    name: "User Profile",
+    name: "Thông tin cá nhân",
     path: "/profile",
   },
 
   {
-    name: "Forms",
+    name: "Báo cáo",
     icon: <ListIcon />,
-    subItems: [{ name: "Form Elements", path: "/form-elements", pro: false }],
+    subItems: [{ name: "Báo cáo Quân sự", path: "/report", pro: false }, { name: "Báo cáo CTĐ, CTCT", path: "/report", pro: false }],
   },
   {
-    name: "Tables",
+    name: "Quản lý",
     icon: <TableIcon />,
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
+    // path: "/manage",
+    subItems: [
+      { name: "Tham mưu huấn luyện", path: "/thammuu", pro: false },
+      { name: "CTĐ - CTCT", path: "/ctd-ctct", pro: false },
+      { name: "Hậu cần - Kỹ thuật", path: "/hc-kt", pro: false},
+    ],
   },
   {
     name: "Pages",

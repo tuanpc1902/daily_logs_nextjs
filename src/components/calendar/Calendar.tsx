@@ -12,6 +12,8 @@ import {
 } from "@fullcalendar/core";
 import { useModal } from "@/hooks/useModal";
 import { Modal } from "@/components/ui/modal";
+import viLocale from '@fullcalendar/react'; // <- Dòng này quan trọng
+
 
 interface CalendarEvent extends EventInput {
   extendedProps: {
@@ -32,10 +34,12 @@ const Calendar: React.FC = () => {
   const { isOpen, openModal, closeModal } = useModal();
 
   const calendarsEvents = {
-    Danger: "danger",
-    Success: "success",
-    Primary: "primary",
-    Warning: "warning",
+    "Tổng trạm": "tongTram",
+    "Trực chỉ huy": "trucChiHuy"
+    // Danger: "danger",
+    // Success: "success",
+    // Primary: "primary",
+    // Warning: "warning",
   };
 
   useEffect(() => {
@@ -46,20 +50,7 @@ const Calendar: React.FC = () => {
         title: "Event Conf.",
         start: new Date().toISOString().split("T")[0],
         extendedProps: { calendar: "Danger" },
-      },
-      {
-        id: "2",
-        title: "Meeting",
-        start: new Date(Date.now() + 86400000).toISOString().split("T")[0],
-        extendedProps: { calendar: "Success" },
-      },
-      {
-        id: "3",
-        title: "Workshop",
-        start: new Date(Date.now() + 172800000).toISOString().split("T")[0],
-        end: new Date(Date.now() + 259200000).toISOString().split("T")[0],
-        extendedProps: { calendar: "Primary" },
-      },
+      }
     ]);
   }, []);
 
@@ -139,7 +130,7 @@ const Calendar: React.FC = () => {
           eventContent={renderEventContent}
           customButtons={{
             addEventButton: {
-              text: "Add Event +",
+              text: "Thêm chuyên môn ngày",
               click: openModal,
             },
           }}
@@ -156,29 +147,15 @@ const Calendar: React.FC = () => {
               {selectedEvent ? "Edit Event" : "Add Event"}
             </h5>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Plan your next big moment: schedule or edit an event to stay on
-              track
+              {selectedEvent ? 'Nhập nội dung chỉnh sửa' : `Nhập nội dung chuyên môn ngày`}
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-6">
             <div>
-              <div>
-                <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">
-                  Event Title
-                </label>
-                <input
-                  id="event-title"
-                  type="text"
-                  value={eventTitle}
-                  onChange={(e) => setEventTitle(e.target.value)}
-                  className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
-                />
-              </div>
-            </div>
-            <div className="mt-6">
-              <label className="block mb-4 text-sm font-medium text-gray-700 dark:text-gray-400">
+              <div className="">
+              {/* <label className="block mb-4 text-sm font-medium text-gray-700 dark:text-gray-400">
                 Event Color
-              </label>
+              </label> */}
               <div className="flex flex-wrap items-center gap-4 sm:gap-5">
                 {Object.entries(calendarsEvents).map(([key, value]) => (
                   <div key={key} className="n-chk">
@@ -186,10 +163,10 @@ const Calendar: React.FC = () => {
                       className={`form-check form-check-${value} form-check-inline`}
                     >
                       <label
-                        className="flex items-center text-sm text-gray-700 form-check-label dark:text-gray-400"
+                        className="flex items-center text-sm text-gray-700 form-check-label dark:text-gray-400 cursor-pointer"
                         htmlFor={`modal${key}`}
                       >
-                        <span className="relative">
+                        <span className="relative cursor-pointer">
                           <input
                             className="sr-only form-check-input"
                             type="radio"
@@ -214,6 +191,20 @@ const Calendar: React.FC = () => {
                 ))}
               </div>
             </div>
+              <div className="mt-6">
+                <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">
+                  Trực chỉ huy
+                </label>
+                <input
+                  id="event-title"
+                  type="text"
+                  value={eventTitle}
+                  onChange={(e) => setEventTitle(e.target.value)}
+                  className="dark:bg-dark-900 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-hidden focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800"
+                />
+              </div>
+            </div>
+            
 
             <div className="mt-6">
               <label className="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">
