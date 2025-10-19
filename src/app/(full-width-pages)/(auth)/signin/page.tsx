@@ -1,11 +1,11 @@
-import SignInForm from "@/components/auth/SignInForm";
+import AuthContainer from "@/components/auth/AuthContainer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Next.js SignIn Page | TailAdmin - Next.js Dashboard Template",
-  description: "This is Next.js Signin Page TailAdmin Dashboard Template",
+  title: "Đăng nhập | Daily Logs",
+  description: "Đăng nhập vào tài khoản Daily Logs của bạn",
 };
 
 export default function SignIn() {
-  return <SignInForm />;
+  return <AuthContainer />;
 }

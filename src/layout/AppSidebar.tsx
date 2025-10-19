@@ -310,7 +310,7 @@ const AppSidebar: React.FC = () => {
     >
       <div
         className={`py-8 flex  ${
-          !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
+          !isExpanded && !isHovered ? "lg:justify-center" : "justify-center"
         }`}
       >
         <Link href="/">
@@ -318,27 +318,40 @@ const AppSidebar: React.FC = () => {
             <>
               <Image
                 className="dark:hidden"
-                src="/images/logo/logo.svg"
+                src="/images/logo/logo-light.png"
                 alt="Logo"
                 width={200}
                 height={60}
               />
               <Image
                 className="hidden dark:block"
-                src="/images/logo/logo.svg"
+                src="/images/logo/logo-dark.png"
                 alt="Logo"
                 width={200}
                 height={60}
               />
             </>
           ) : (
+            <>
             <Image
-              src="/images/logo/logo-icon.svg"
+              className="dark:hidden" 
+              src="/images/logo/logo-light-icon.png"
               alt="Logo"
               width={45}
               height={45}
             />
-          )}
+            <Image
+              className="hidden dark:block"
+              src="/images/logo/logo-dark-icon.png"
+              alt="Logo"
+              width={45}
+              height={45}
+            />
+            </>
+          
+          )
+          }
+          
         </Link>
       </div>
       <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
@@ -353,7 +366,7 @@ const AppSidebar: React.FC = () => {
                 }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Menu"
+                  "Danh mục"
                 ) : (
                   <HorizontaLDots />
                 )}
@@ -370,7 +383,7 @@ const AppSidebar: React.FC = () => {
                 }`}
               >
                 {isExpanded || isHovered || isMobileOpen ? (
-                  "Others"
+                  "Khác"
                 ) : (
                   <HorizontaLDots />
                 )}

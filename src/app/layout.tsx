@@ -1,10 +1,10 @@
-import { Roboto } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
 import { SidebarProvider } from '@/context/SidebarContext';
 import { ThemeProvider } from '@/context/ThemeContext';
 
-const outfit = Roboto({
+const outfit = Inter({
   subsets: ["latin"],
 });
 
