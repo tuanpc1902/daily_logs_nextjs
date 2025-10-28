@@ -5,7 +5,7 @@ import Label from "@/components/form/Label";
 import Button from "@/components/ui/button/Button";
 import { EyeCloseIcon, EyeIcon } from "@/icons";
 import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface FormData {
   email: string;
@@ -130,7 +130,11 @@ export default function SignInForm() {
       if (nextField === 'password' && passwordInputRef.current) {
         passwordInputRef.current.focus();
       } else if (nextField === 'submit') {
-        handleSubmit(e as any);
+        const form = e.currentTarget.form;
+        if (form) {
+          const formEvent = new Event('submit', { bubbles: true, cancelable: true });
+          form.dispatchEvent(formEvent);
+        }
       }
     }
   };
@@ -170,7 +174,7 @@ export default function SignInForm() {
       // Here you would typically call your authentication API
       console.log("Login attempt:", formData);
       
-    } catch (error) {
+    } catch {
       setAttempts(prev => prev + 1);
       setErrors({
         general: attempts >= 2 

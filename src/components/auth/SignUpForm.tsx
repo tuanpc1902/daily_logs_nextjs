@@ -5,7 +5,7 @@ import Label from "@/components/form/Label";
 import Button from "@/components/ui/button/Button";
 import { EyeCloseIcon, EyeIcon } from "@/icons";
 import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface FormData {
   firstName: string;
@@ -170,7 +170,11 @@ export default function SignUpForm() {
       } else if (nextField === 'confirmPassword' && confirmPasswordInputRef.current) {
         confirmPasswordInputRef.current.focus();
       } else if (nextField === 'submit') {
-        handleSubmit(e as any);
+        const form = e.currentTarget.form;
+        if (form) {
+          const formEvent = new Event('submit', { bubbles: true, cancelable: true });
+          form.dispatchEvent(formEvent);
+        }
       }
     }
   };
