@@ -27,7 +27,7 @@ export default function UserInfoCard() {
                 Tên
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                Đức
+                Tuấn
               </p>
             </div>
 
@@ -36,7 +36,7 @@ export default function UserInfoCard() {
                 Họ
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                Vũ Minh
+                Phạm Công
               </p>
             </div>
 
@@ -45,7 +45,7 @@ export default function UserInfoCard() {
                 Địa chỉ Email
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                ducvuminh@email.com
+                phamcongtuan@email.com
               </p>
             </div>
 
@@ -70,7 +70,7 @@ export default function UserInfoCard() {
                 Chức vụ
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                Lữ đoàn trưởng
+                Chiến sĩ
               </p>
             </div>
           </div>
@@ -155,17 +155,17 @@ export default function UserInfoCard() {
                 <div className="grid grid-cols-1 gap-x-6 gap-y-5 lg:grid-cols-2">
                   <div className="col-span-2 lg:col-span-1">
                     <Label>Tên</Label>
-                    <Input type="text" defaultValue="Đức" />
+                    <Input type="text" defaultValue="Tuấn" />
                   </div>
 
                   <div className="col-span-2 lg:col-span-1">
                     <Label>Họ</Label>
-                    <Input type="text" defaultValue="Vũ Minh" />
+                    <Input type="text" defaultValue="Phạm Công" />
                   </div>
 
                   <div className="col-span-2 lg:col-span-1">
                     <Label>Địa chỉ Email</Label>
-                    <Input type="text" defaultValue="ducvuminh@email.com" />
+                    <Input type="text" defaultValue="phamcongtuna@email.com" />
                   </div>
 
                   <div className="col-span-2 lg:col-span-1">
@@ -175,11 +175,11 @@ export default function UserInfoCard() {
 
                   <div className="col-span-2 lg:col-span-1">
                     <Label>Cấp bậc</Label>
-                    <Input type="text" defaultValue="Đại tá" />
+                    <Input type="text" defaultValue="Hạ sĩ" />
                   </div>
                   <div className="col-span-2 lg:col-span-1">
                     <Label>Chức vụ</Label>
-                    <Input type="text" defaultValue="Lữ đoàn trưởng" />
+                    <Input type="text" defaultValue="Chiến sĩ" />
                   </div>
                 </div>
               </div>
