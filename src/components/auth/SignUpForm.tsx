@@ -3,7 +3,7 @@ import Checkbox from "@/components/form/input/Checkbox";
 import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
 import Button from "@/components/ui/button/Button";
-import { ChevronLeftIcon, EyeCloseIcon, EyeIcon } from "@/icons";
+import { EyeCloseIcon, EyeIcon } from "@/icons";
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 
@@ -223,7 +223,7 @@ export default function SignUpForm() {
       // Here you would typically call your registration API
       console.log("Registration attempt:", formData);
       
-    } catch (error) {
+    } catch {
       setErrors({
         general: "Registration failed. Please try again."
       });
@@ -297,7 +297,7 @@ export default function SignUpForm() {
 
         {/* Social Login Buttons */}
         <div className="space-y-4">
-          {/* <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 gap-3">
             <button 
               onClick={() => handleSocialSignup('google')}
               disabled={isLoading}
@@ -350,7 +350,7 @@ export default function SignUpForm() {
               </svg>
               <span className="relative z-10">Tiếp tục với X</span>
             </button>
-          </div> */}
+          </div>
           
           {/* Divider */}
           <div className="relative py-4">
