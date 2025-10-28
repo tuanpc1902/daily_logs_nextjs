@@ -62,7 +62,7 @@ export default function UserInfoCard() {
                 Cấp bậc
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                Đại tá
+                Hạ sĩ
               </p>
             </div>
             <div>
