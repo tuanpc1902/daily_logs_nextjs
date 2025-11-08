@@ -54,7 +54,7 @@ export default function UserInfoCard() {
                 Số điện thoại
               </p>
               <p className="text-sm font-medium text-gray-800 dark:text-white/90">
-                +09 363 398 46
+                +84 394008704
               </p>
             </div>
             <div>
